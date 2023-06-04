@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  api-node:
+    image: api
+    container_name: api-container
+    build:
+      context: ./api-node/
+      dockerfile: ../.docker/Dockerfile
+      target: dev
+    init: true
+    volumes:
+      - type: bind
+        source: ./api-node/
+        target: /usr/src/app/
+      - type: volume
+        target: /usr/src/app/node_modules
+    ports:
+      - 3001:3001
+    networks:
+      - backend 
+    restart: unless-stopped
+networks:
+  backend:
