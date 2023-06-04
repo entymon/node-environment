@@ -14,6 +14,8 @@ services:
         target: /usr/src/app/
       - type: volume
         target: /usr/src/app/node_modules
+      - type: volume
+        target: /usr/src/app/dist
     ports:
       - 3001:3001
     networks:

@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/usr/src/app/.npm \
 
 COPY . .
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
 
 FROM base AS production
 
