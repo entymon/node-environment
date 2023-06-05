@@ -37,6 +37,6 @@ COPY --chown=node:node ./healthcheck/ .
 COPY --chown=node:node ./src/ .
 
 # Indicate expected port
-EXPOSE 3001
+EXPOSE 3007
 
 CMD [ "node", "./dist/server.js" ]

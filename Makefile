@@ -14,7 +14,8 @@ compose-up:
 
 .PHONY: compose-up-build
 compose-up-build:
-	docker compose -f $(DEV_COMPOSE_FILE) up --build
+	docker compose --env-file .docker/config.env.dev -f $(DEV_COMPOSE_FILE) up --build 
+	# docker compose -f $(DEV_COMPOSE_FILE) up --build 
 
 .PHONY: compose-up-debug-build
 compose-up-debug-build:
